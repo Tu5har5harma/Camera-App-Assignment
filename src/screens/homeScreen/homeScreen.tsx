@@ -17,7 +17,7 @@ const HomeScreen = ({navigation, route}: any) => {
   let options = {
     saveToPhotos: true,
     mediaType: 'video',
-    videoQuality: 'high',
+    videoQuality: 'low',
     cameraType: 'front',
   };
 
