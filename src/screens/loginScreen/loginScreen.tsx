@@ -1,14 +1,24 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Alert} from 'react-native';
 import {CustomButton} from '../../components/CustomButton';
 import AppStyles from '../../config/styles';
 
-const LoginScreen = ({navigation}) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+const LoginScreen = ({navigation}: any) => {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+
+  const alertBox = () =>
+    Alert.alert('Required', 'Please fill the name & email to Sign-up!', [
+      {
+        text: 'Ok',
+        style: 'cancel',
+      },
+    ]);
 
   const onSignup = () => {
-    navigation.navigate('HomeScreen', {name, email});
+    name && email
+      ? navigation.navigate('HomeScreen', {name, email})
+      : alertBox();
   };
 
   const onChangeName = value => {

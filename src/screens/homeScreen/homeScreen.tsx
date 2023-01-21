@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: '#3D8361',
+    textTransform: 'capitalize',
   },
   textBox: {
     paddingBottom: 15,
